@@ -1,0 +1,16 @@
+wordpress:
+  build: .
+  links:
+   - db
+  ports:
+   - "80:80"
+  environment:
+    DB_USER: root
+    DB_PASSWORD: coscup_z>b
+db:
+  image: ctlc/mysql
+  ports:
+   - "3306:3306"
+  environment:
+    MYSQL_DATABASE: wordpress
+    MYSQL_ROOT_PASSWORD: coscup_z>b
